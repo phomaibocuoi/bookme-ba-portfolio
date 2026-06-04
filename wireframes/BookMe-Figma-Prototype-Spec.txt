@@ -1,0 +1,214 @@
+================================================================================
+MASTER UI/UX SPECIFICATION & PROTOTYPE PROMPT: BOOKME PLATFORM
+================================================================================
+
+[SECTION 1: DESIGN SYSTEM FOUNDATION]
+Design a complete dual-platform system called "BookMe" — a beauty and wellness scheduling platform for roles: Khách hàng (Customer), Đối tác (Partner), Nhân viên (Staff), và Quản trị viên (Admin).
+
+• Phong cách thiết kế: Sạch sẽ, thanh lịch, sang trọng cao cấp (Premium Beauty & Wellness).
+• Bảng màu hệ thống:
+  - Màu nền chính: Xám sáng nhẹ (#FAFAFA)
+  - Khung chứa (Cards): Màu trắng tinh khiết (#FFFFFF) với đường viền 1px (#E5E7EB) và bóng đổ nhẹ.
+  - Màu chủ đạo (Nút bấm & CTA chính): Rose Gold (#E18E96) với chữ màu trắng.
+  - Nhãn trạng thái (Status Badges dạng viên thuốc):
+    * Hoàn thành: Xanh lá (#10B981)
+    * Chờ xác nhận: Vàng hổ phách (#F59E0B)
+    * Đã xác nhận: Xanh dương (#3B82F6)
+    * Đã đến (Checked-in): Tím (#8B5CF6)
+    * Đã hủy: Đỏ (#EF4444)
+• Font chữ: Inter. Phân cấp cỡ chữ rõ ràng.
+• Quy chuẩn bo góc: Bo góc 16px cho thẻ (cards), 12px cho các ô nhập liệu (inputs).
+• Khoảng cách (Spacing): Padding trang 24px, khoảng cách giữa các thẻ là 16px.
+• Định dạng dữ liệu: Tiền tệ dạng 1,000,000đ. Ngày tháng dạng DD/MM/YYYY.
+
+================================================================================
+
+[SECTION 2: MANDATORY SHARED LAYOUTS]
+
+--- KHUNG GIAO DIỆN BẮT BUỘC - DESKTOP WEB PORTAL (Đối tác, Nhân viên, Quản trị viên) ---
+• Kích thước: Desktop mockup (1440x900px)
+• Thanh điều hướng trên cùng (Top Navigation Bar - Cao 80px, Nền trắng, Đường viền dưới 1px #E5E7EB):
+  - Bên trái: Logo & Tên thương hiệu "BookMe"
+  - Ở giữa: Các mục điều hướng ngang kèm icon (Mục đang chọn được làm nổi bật bằng màu Rose Gold #E18E96). Các mục hiển thị thay đổi theo vai trò đăng nhập.
+  - Bên phải: Icon Chuông thông báo với số lượng thông báo màu đỏ | Huy hiệu vai trò (e.g. "Đối Tác", "Quản trị viên") | Ảnh đại diện người dùng + Tên hiển thị + Nút đăng xuất.
+• Vùng nội dung chính: Nền trắng, padding 24px, hiển thị ngay dưới thanh điều hướng, hỗ trợ cuộn trang.
+
+--- KHUNG GIAO DIỆN BẮT BUỘC - MOBILE APP (Khách hàng) ---
+• Kích thước: Mobile mockup (390x844px)
+• Thanh tiêu đề phía trên (Sticky Top Header): Tên màn hình hiện tại + Nút quay lại (Back) + Icon bookmark.
+• Thanh điều hướng phía dưới (Sticky Bottom Navigation Bar): Trang chủ | Lịch hẹn | Thông báo | Hồ sơ (Icon đang chọn nổi bật màu Rose Gold #E18E96).
+• Vùng nội dung chính: Rộng toàn màn hình, hỗ trợ cuộn trang, padding hai bên 16px.
+
+================================================================================
+
+[SECTION 3: ROLE-BASED NAVIGATION MAPPING]
+• KHÁCH HÀNG (Mobile Bottom Nav): Trang chủ | Lịch hẹn | Thông báo | Hồ sơ
+• ĐỐI TÁC (Web Top Nav): Tổng quan | Lịch hẹn | Dịch vụ | Nhân viên | Báo cáo | Cài đặt
+• NHÂN VIÊN (Web Top Nav): Lịch làm việc | Thao tác nhanh | Cài đặt
+• QUẢN TRỊ VIÊN (Web Top Nav): Tổng quan | Duyệt đối tác | Danh mục dịch vụ | Cài đặt
+
+================================================================================
+
+[SECTION 4: 22 SCREEN SPECIFICATIONS]
+
+--- MÀN HÌNH KHÁCH HÀNG (Mobile - 390x844px) ---
+
+• SCREEN C1 — Chào mừng & Giới thiệu (Không thanh điều hướng dưới, Không tiêu đề trên)
+  - Nền chuyển màu Rose Gold nhẹ nhàng.
+  - Giữa màn hình: Logo BookMe + Tên ứng dụng. Hình vẽ nét tối giản về spa/salon ở giữa.
+  - Nút bấm chính ở dưới cùng: "Bắt đầu trải nghiệm".
+
+• SCREEN C2 — Đăng nhập / Đăng ký (Không thanh điều hướng dưới, Không tiêu đề trên)
+  - Khung đăng nhập căn giữa. Tab lựa chọn: "Đăng nhập" and "Đăng ký".
+  - Ô nhập liệu: "Email hoặc Số điện thoại", "Mật khẩu" (kèm icon ẩn/hiện mật khẩu).
+  - Nút bấm chính: "Đăng nhập" (Màu Rose gold). Nút phụ: "Tiếp tục với Google".
+  - Trạng thái lỗi: Viền đỏ quanh ô nhập liệu kèm thông báo "Sai thông tin đăng nhập".
+
+• SCREEN C3 — Trang chủ / Tìm kiếm (Sử dụng khung giao diện Mobile)
+  - Thanh tiêu đề chứa: Ảnh đại diện khách hàng, "Chào khách hàng". Thanh tìm kiếm lớn: "Tìm kiếm cơ sở, dịch vụ...".
+  - Các nút chọn danh mục cuộn ngang: "Salon Tóc", "Spa Làm Đẹp", "Nails", "Phòng Khám".
+  - Danh sách dọc "Cơ sở nổi bật": Các thẻ chứa Ảnh cơ sở, Tên cơ sở, Đánh giá (★ 4.8), Địa chỉ.
+
+• SCREEN C4 — Chi tiết cơ sở (Sử dụng khung giao diện Mobile, Không có thanh điều hướng dưới)
+  - Trên cùng: Ảnh bìa lớn cơ sở kèm nút quay lại và icon yêu thích (bookmark).
+  - Phần thông tin: Tên cơ sở, Địa chỉ, Đánh giá (★ 4.8), mô tả ngắn.
+  - Danh sách dịch vụ: Các dòng chứa Tên dịch vụ, Thời lượng (phút), Giá tiền (đ) và nút "Chọn" bên cạnh.
+  - Thanh hành động cố định dưới cùng: "Tiếp tục đặt lịch (1 dịch vụ đã chọn) →" (Chỉ sáng lên khi có dịch vụ được chọn).
+
+• SCREEN C5 — Chọn Thời gian & Nhân viên (Sử dụng khung giao diện Mobile)
+  - Thẻ tóm tắt dịch vụ đã chọn ở trên cùng.
+  - "Chọn Nhân viên": Danh sách ảnh đại diện cuộn ngang kèm Tên nhân viên. Có tùy chọn "Bất kỳ ai (Hệ thống tự xếp)".
+  - "Chọn Thời gian": Lịch chọn ngày cuộn ngang. Lưới hiển thị các khung giờ trống (ví dụ: 09:00, 10:00).
+  - BĂNG CẢNH BÁO KHẨN CẤP (Màu vàng hổ phách): "Đang giữ chỗ khung 10:00 - Còn 09:59" (Bộ đếm ngược).
+
+• SCREEN C6 — Xác nhận Đặt lịch (Sử dụng khung giao diện Mobile)
+  - Thẻ tóm tắt: Tên cơ sở | Tên nhân viên | Ngày đặt | Giờ bắt đầu | Dịch vụ | Tổng tiền.
+  - Ô nhập liệu: "Nhập mã giảm giá".
+  - Lựa chọn phương thức thanh toán: "Thanh toán tại quầy" và "Thanh toán online".
+  - Nút bấm chính: "Xác nhận đặt lịch" (Màu Rose Gold).
+
+• SCREEN C7 — Trạng thái Thành công (Không thanh điều hướng dưới)
+  - Icon tích xanh thành công lớn ở giữa.
+  - Tiêu đề: "Đặt lịch thành công!". Dòng chữ: "Mã lịch hẹn của bạn là BM-1234".
+  - Nút bấm: "Xem lịch hẹn của tôi".
+
+• SCREEN C8 — Lịch hẹn của tôi (Sử dụng khung giao diện Mobile)
+  - Tab chuyển đổi trên cùng: "Sắp tới" và "Lịch sử".
+  - Thẻ lịch hẹn trong tab "Sắp tới": Ngày giờ hẹn | Tên cơ sở | Dịch vụ | Nhãn trạng thái (Vàng "Chờ xác nhận" hoặc Xanh dương "Đã xác nhận").
+
+• SCREEN C9 — Chi tiết Lịch hẹn & Hủy lịch (Sử dụng khung giao diện Mobile)
+  - Chi tiết lịch hẹn (Mã booking, Tên cơ sở, Tên nhân viên, Giờ hẹn, Giá tiền). Dòng mốc thời gian trạng thái.
+  - ĐIỀU KIỆN HIỂN THỊ NÚT BẤM (Quy tắc BUS-03):
+    * Nếu thời gian hiện tại cách giờ hẹn > 2 tiếng: Hiển thị nút viền đỏ "Hủy lịch hẹn".
+    * Nếu thời gian hiện tại cách giờ hẹn < 2 tiếng: Ẩn nút hủy, hiển thị chữ màu xám "Không thể hủy lịch do sát giờ hẹn (dưới 2h)".
+
+• SCREEN C10 — Đánh giá & Nhận xét (Sử dụng khung giao diện Mobile)
+  - Chỉ hiển thị với lịch hẹn trạng thái "Hoàn thành". Thông tin cơ sở & nhân viên.
+  - Thanh chọn 5 sao lớn tương tác. Ô nhập văn bản: "Chia sẻ trải nghiệm của bạn...".
+  - Nút bấm: "Gửi đánh giá".
+
+• SCREEN C11 — Hồ sơ cá nhân (Sử dụng khung giao diện Mobile)
+  - Ảnh đại diện, Họ tên, Số điện thoại, Email.
+  - Danh sách lựa chọn: Lịch sử giao dịch, Địa điểm yêu thích, Cài đặt thông báo.
+  - Dưới cùng: Nút "Đăng xuất" (Chữ màu đỏ).
+
+--- MÀN HÌNH ĐỐI TÁC (Desktop Web - 1440x900px) ---
+
+• SCREEN P1 — Tổng quan đối tác (Sử dụng khung giao diện Web, chọn mục "Tổng quan")
+  - 4 Thẻ chỉ số: "Đặt lịch hôm nay", "Doanh thu tháng", "Tỷ lệ No-show", "Đánh giá trung bình" (★).
+  - Vùng trung tâm: Biểu đồ cột xu hướng doanh thu và Lịch biểu theo dõi lịch hẹn hôm nay.
+
+• SCREEN P2 — Quản lý Lịch hẹn (Sử dụng khung giao diện Web, chọn mục "Lịch hẹn")
+  - Nút chuyển chế độ xem: Dạng Lịch (Calendar) / Dạng Danh sách (List).
+  - Bảng danh sách: Mã HĐ | Tên khách hàng | Dịch vụ | Nhân viên | Thời gian | Trạng thái (Nhãn màu) | Hành động.
+
+• SCREEN P3 — Cập nhật Trạng thái Booking (Bảng chi tiết trượt ra từ bên phải đè lên SCREEN P2)
+  - Panel trượt hiển thị chi tiết lịch hẹn (chỉ đọc).
+  - CÁC NÚT HÀNH ĐỘNG ĐỂ CHUYỂN TRẠNG THÁI (Hiển thị theo trạng thái hiện tại):
+    * Nếu trạng thái là Chờ xác nhận: Hiển thị nút "Xác nhận" (Xanh lá) và "Từ chối" (Viền đỏ).
+    * Nếu trạng thái là Đã xác nhận: Hiển thị nút "Khách đã đến (Check-in)" (Tím).
+    * Nếu trạng thái là Đã đến (Checked-in): Hiển thị nút "Hoàn thành dịch vụ" (Xanh lá).
+
+• SCREEN P4 — Quản lý Dịch vụ (Sử dụng khung giao diện Web, chọn mục "Dịch vụ")
+  - Bảng thông tin: Tên dịch vụ | Danh mục | Giá tiền | Thời lượng (phút).
+  - Phía trên bảng: Thanh tìm kiếm + Nút Rose gold "+ Thêm dịch vụ mới".
+
+• SCREEN P5 — Quản lý Nhân viên (Sử dụng khung giao diện Web, chọn mục "Nhân viên")
+  - Bảng thông tin: Ảnh đại diện | Tên nhân viên | Số điện thoại | Trạng thái (Nút gạt Active) | Hành động (Sửa/Xóa).
+  - Phía trên bảng: Nút "+ Thêm nhân viên".
+
+• SCREEN P6 — Đăng ký / Hồ sơ Partner (Khung thẻ biểu mẫu căn giữa)
+  - Các ô điền thông tin: Tên cơ sở | Địa chỉ | Số điện thoại | Email đăng ký | Danh mục hoạt động.
+  - Trên cùng hiển thị nhãn: Vàng "Chờ Admin duyệt".
+
+--- MÀN HÌNH NHÂN VIÊN (Desktop/Tablet Web - 1440x900px) ---
+
+• SCREEN S1 — Lịch làm việc cá nhân (Sử dụng khung giao diện Web, chọn mục "Lịch làm việc")
+  - Bảng hiển thị danh sách các lịch hẹn được phân công riêng cho nhân viên đang đăng nhập.
+  - Lịch biểu hiển thị các ca hẹn trong ngày hôm nay.
+
+• SCREEN S2 — Thao tác nhanh (Khung thoại Modal nổi đè lên SCREEN S1)
+  - Các nút chạm lớn, thân thiện với máy tính bảng: "Check-in" (Tím) và "Hoàn thành" (Xanh lá) để cập nhật nhanh trạng thái khi tiếp đón khách.
+
+--- MÀN HÌNH QUẢN TRỊ VIÊN (Desktop Web - 1440x900px) ---
+
+• SCREEN A1 — Tổng quan hệ thống (Sử dụng khung giao diện Web, chọn mục "Tổng quan")
+  - Các thẻ chỉ số toàn hệ thống: Tổng User | Tổng Partner | Tổng Booking | Doanh thu hệ thống.
+  - Giữa trang: Biểu đồ đường biểu diễn tốc độ đăng ký mới của đối tác.
+
+• SCREEN A2 — Duyệt đối tác (Sử dụng khung giao diện Web, chọn mục "Duyệt đối tác")
+  - Bảng danh sách các Partner chờ duyệt: Tên cơ sở | Ngày đăng ký | Thông tin liên hệ | Hành động.
+  - Cột hành động chứa: Nút "Duyệt" (Xanh lá) | "Từ chối" (Viền đỏ).
+
+• SCREEN A3 — Quản lý Danh mục Dịch vụ (Sử dụng khung giao diện Web, chọn mục "Danh mục dịch vụ")
+  - Bảng thông tin: Mã danh mục | Tên danh mục (Spa, Salon, Nails, v.v.) | Mô tả | Số lượng đối tác đăng ký.
+  - Nút mở Modal "+ Thêm danh mục mới".
+
+================================================================================
+
+[SECTION 5: FIGMA PROTOTYPE STITCHING & INTERACTION SPECIFICATIONS]
+
+[LUỒNG ĐIỀU HƯỚNG KHÁCH HÀNG (MOBILE) - Hiệu ứng: Slide Left (Ease Out, 300ms)]
+• SCREEN C1 -> Nút "Bắt đầu trải nghiệm" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C2 (Transition: Instant)
+• SCREEN C2 -> Nút "Đăng nhập" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C3 (Transition: Smart Animate)
+• SCREEN C3 -> Lựa chọn danh mục "Spa" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C3 (Variant: Filtered)
+• SCREEN C3 -> Nhấp vào thẻ "Cơ sở nổi bật" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C4 (Transition: Slide Left)
+• SCREEN C3 -> Bottom Nav "Lịch hẹn" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C8 (Transition: Instant)
+• SCREEN C3 -> Bottom Nav "Hồ sơ" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C11 (Transition: Instant)
+• SCREEN C4 -> Top Left "Quay lại" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C3 (Transition: Slide Right)
+• SCREEN C4 -> Chọn dòng Dịch vụ [Trigger: On Tap] -> Hành động: Navigate to SCREEN C4 (Variant: SelectedState)
+• SCREEN C4 -> Nút Bottom CTA "Tiếp tục đặt lịch →" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C5 (Transition: Slide Left)
+• SCREEN C5 -> Top Left "Quay lại" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C4 (Transition: Slide Right)
+• SCREEN C5 -> Chọn nhân viên & Khung giờ [Trigger: On Tap] -> Hành động: Navigate to SCREEN C5 (Variant: ActiveState with Countdown Banner)
+• SCREEN C5 -> Nút Bottom CTA "Tiếp tục" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C6 (Transition: Slide Left)
+• SCREEN C6 -> Top Left "Quay lại" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C5 (Transition: Slide Right)
+• SCREEN C6 -> Nút "Xác nhận đặt lịch" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C7 (Transition: Dissolve, 400ms)
+• SCREEN C7 -> Nút "Xem lịch hẹn của tôi" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C8 (Transition: Slide Left)
+• SCREEN C8 -> Tab trên cùng "Lịch sử" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C8 (Variant: HistoryTab)
+• SCREEN C8 -> Thẻ lịch hẹn đang hoạt động [Trigger: On Tap] -> Hành động: Navigate to SCREEN C9 (Transition: Slide Left)
+• SCREEN C9 -> Top Left "Quay lại" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C8 (Transition: Slide Right)
+• SCREEN C9 -> Nút "Hủy lịch hẹn" (Chỉ hiện nếu Giờ hẹn > 2h) [Trigger: On Tap] -> Hành động: Open Overlay (Confirmation Modal)
+  - Modal -> Click "Xác nhận hủy" [Trigger: On Tap] -> Hành động: Close Overlay + Navigate to SCREEN C8 (Trạng thái chuyển sang Đã hủy)
+• SCREEN C9 -> Nút "Đánh giá dịch vụ" (Chỉ hiện nếu Trạng thái là Hoàn thành) [Trigger: On Tap] -> Hành động: Navigate to SCREEN C10 (Transition: Slide Left)
+• SCREEN C10 -> Nút "Gửi đánh giá" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C8 (Hiện Toast thông báo thành công, tự ẩn sau 2s)
+• SCREEN C11 -> Nút "Đăng xuất" [Trigger: On Tap] -> Hành động: Navigate to SCREEN C2 (Transition: Slide Right)
+
+[LUỒNG ĐIỀU HƯỚNG ĐỐI TÁC (WEB) - Hiệu ứng: Dissolve, 200ms]
+• SCREEN P1 -> Top Nav "Lịch hẹn" [Trigger: On Click] -> Hành động: Navigate to SCREEN P2
+• SCREEN P1 -> Top Nav "Dịch vụ" [Trigger: On Click] -> Hành động: Navigate to SCREEN P4
+• SCREEN P1 -> Top Nav "Nhân viên" [Trigger: On Click] -> Hành động: Navigate to SCREEN P5
+• SCREEN P2 -> Dòng lịch hẹn trên bảng [Trigger: On Click] -> Hành động: Open Drawer (SCREEN P3 trượt ra từ bên phải)
+  - SCREEN P3 Drawer -> Click "Xác nhận", "Check-in", "Hoàn thành" [Trigger: On Click] -> Hành động: Cập nhật trạng thái + Đóng Drawer + Cập nhật nhãn màu trên bảng SCREEN P2.
+• SCREEN P4 -> Nút "+ Thêm dịch vụ mới" [Trigger: On Click] -> Hành động: Open Overlay (Modal dialog card)
+• SCREEN P5 -> Nút "+ Thêm nhân viên" [Trigger: On Click] -> Hành động: Open Overlay (Modal dialog card)
+
+[LUỒNG ĐIỀU HƯỚNG NHÂN VIÊN (WEB)]
+• SCREEN S1 -> Ca hẹn trên lịch biểu [Trigger: On Click] -> Hành động: Open Overlay (Quick Action Modal SCREEN S2)
+  - SCREEN S2 -> Click "Check-in" hoặc "Hoàn thành" [Trigger: On Click] -> Hành động: Đóng Overlay + Cập nhật trạng thái trên SCREEN S1.
+
+[LUỒNG ĐIỀU HƯỚNG QUẢN TRỊ VIÊN (WEB) - Hiệu ứng: Dissolve, 200ms]
+• SCREEN A1 -> Top Nav "Duyệt đối tác" [Trigger: On Click] -> Hành động: Navigate to SCREEN A2
+• SCREEN A1 -> Top Nav "Danh mục dịch vụ" [Trigger: On Click] -> Hành động: Navigate to SCREEN A3
+• SCREEN A2 -> Nút "Duyệt" [Trigger: On Click] -> Hành động: Hiện Alert duyệt thành công + Xóa dòng khỏi danh sách chờ.
+• SCREEN A3 -> Nút "+ Thêm danh mục mới" [Trigger: On Click] -> Hành động: Open Overlay (Add Category Modal)
+================================================================================
