@@ -107,7 +107,7 @@ Ma trận vết tracing từ Business Requirements → Functional Requirements �
 **Hồ Khổng Tuyết Như**
 IT Business Analyst
 
-- Email: ngocdiep.app.mail@gmail.com
+- Email: hokhongtuyetnhu0807@gmail.com
 - LinkedIn: [linkedin.com/in/hokhongtuyetnhu](https://linkedin.com/in/hokhongtuyetnhu)
 
 ---
